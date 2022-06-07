@@ -1,19 +1,10 @@
-
 import java.util.*;
+import java.math.*;
 
 class ArrayListSort {
 
-    long[] arrayListSortDesc(long[] arrayList) {
-        // Arrays.sort(arrayList); //This is java prebuild sorting method
-        for (int a = 0; a < arrayList.length; a++) {
-            for (int b = a; b < arrayList.length; b++) {
-                if (arrayList[b] > arrayList[a]) {
-                    long index = arrayList[a];
-                    arrayList[a] = arrayList[b];
-                    arrayList[b] = index;
-                }
-            }
-        }
+    public static List<BigInteger> arrayListSortDesc(List<BigInteger> arrayList) {
+        arrayList.sort(Collections.reverseOrder());
         return arrayList;
     }
 
@@ -21,13 +12,11 @@ class ArrayListSort {
 
 public class Core_Java_Assignment_2_SOLUTION {
     public static void main(String[] args) {
-        long arrayList[] = { 24, 543534, 545, 2342, 9 };
-        ArrayListSort al = new ArrayListSort();
-        arrayList = al.arrayListSortDesc(arrayList);
-        System.out.print("[ ");
-        for (int i = 0; i < arrayList.length; i++) {
-            System.out.print(arrayList[i] + " ");
+        ArrayList<BigInteger> arrayList = new ArrayList<>();
+        int[] values = {24, 543534, 545, 2342, 9};
+        for (Integer i : values) {
+            arrayList.add(new BigInteger(String.valueOf(i)));
         }
-        System.out.print("]");
+        System.out.println("Sorted in Reversed order :" + ArrayListSort.arrayListSortDesc(arrayList));
     }
 }
