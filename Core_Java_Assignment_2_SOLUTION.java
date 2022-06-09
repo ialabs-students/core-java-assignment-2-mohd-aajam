@@ -15,7 +15,7 @@ public class Core_Java_Assignment_2_SOLUTION {
         ArrayList<BigInteger> arrayList = new ArrayList<>();
         int[] values = {24, 543534, 545, 2342, 9};
         for (Integer i : values) {
-            arrayList.add(new BigInteger(String.valueOf(i)));
+                        arrayList.add(BigInteger.valueOf(i));
         }
         System.out.println("Sorted in Reversed order :" + ArrayListSort.arrayListSortDesc(arrayList));
     }
